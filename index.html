@@ -1,0 +1,619 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Portfólio de Alves - Desenvolvedor e Estudante de Tecnologia">
+    <title>Alves | Desenvolvedor & Estudante de Tech</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- AOS Animation Library -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    
+    <!-- CSS Personalizado -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Loading Animation -->
+    <div class="loading-screen" id="loadingScreen">
+        <div class="loading-content">
+            <div class="loading-logo">
+                <span class="logo-text">Alves</span>
+                <span class="logo-dot">.</span>
+            </div>
+            <div class="loading-bar">
+                <div class="loading-progress" id="loadingProgress"></div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Progress Indicator de Scroll -->
+    <div class="scroll-progress" id="scrollProgress"></div>
+    
+    <!-- Cursor Customizado -->
+    <div class="custom-cursor" id="customCursor"></div>
+    
+    <!-- Navegação Fixa -->
+    <nav class="navbar" id="navbar">
+        <div class="container">
+            <a href="#hero" class="logo">
+                <span class="logo-text">Alves</span>
+                <span class="logo-dot">.</span>
+            </a>
+            
+            <ul class="nav-menu" id="navMenu">
+                <li class="nav-item">
+                    <a href="#hero" class="nav-link">Início</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#about" class="nav-link">Sobre</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#skills" class="nav-link">Habilidades</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#projects" class="nav-link">Projetos</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#timeline" class="nav-link">Trajetória</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#contact" class="nav-link">Contato</a>
+                </li>
+            </ul>
+            
+            <div class="nav-actions">
+                <!-- Toggle de Tema -->
+                <button class="theme-toggle" id="themeToggle" aria-label="Alternar tema">
+                    <i class="fas fa-moon" id="themeIcon"></i>
+                </button>
+                
+                <!-- Menu Mobile -->
+                <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Menu">
+                    <span class="hamburger"></span>
+                    <span class="hamburger"></span>
+                    <span class="hamburger"></span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- SEÇÃO HERO -->
+    <section id="hero" class="hero">
+        <!-- Partículas de Fundo -->
+        <div class="particles" id="particles"></div>
+        
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-text" data-aos="fade-right" data-aos-duration="1000">
+                    <p class="hero-greeting">Olá, eu sou</p>
+                    <h1 class="hero-name">
+                        Alves <span class="wave">👋</span>
+                    </h1>
+                    
+                    <!-- Efeito de Digitação -->
+                    <div class="hero-typing">
+                        <span class="typing-text" id="typingText"></span>
+                        <span class="typing-cursor">|</span>
+                    </div>
+                    
+                    <p class="hero-description">
+                        Transformando ideias em código e criando experiências digitais incríveis.
+                    </p>
+                    
+                    <div class="hero-buttons">
+                        <a href="#projects" class="btn btn-primary">
+                            <i class="fas fa-rocket"></i>
+                            Ver Projetos
+                        </a>
+                        <a href="#contact" class="btn btn-secondary">
+                            <i class="fas fa-envelope"></i>
+                            Entrar em Contato
+                        </a>
+                    </div>
+                    
+                    <div class="hero-social">
+                        <a href="https://github.com/Alvesmld" class="social-link" aria-label="GitHub" target="blank">
+                            <i class="fab fa-github"></i>
+                        </a>
+                        <a href="https://instagram.com/Alvesmld" class="social-link" aria-label="Instagram">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="hero-image" data-aos="fade-left" data-aos-duration="1000">
+                    <div class="avatar-container">
+                        <div class="avatar-glow"></div>
+                        <div class="avatar">
+                            <img src="assets/avatar-placeholder.png" alt="Foto de Alves" onerror="this.src='https://via.placeholder.com/400x400/8b5cf6/f1f5f9?text=Alves'">
+                        </div>
+                        <div class="avatar-ring"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Scroll Indicator -->
+        <div class="scroll-indicator">
+            <div class="scroll-mouse">
+                <div class="scroll-wheel"></div>
+            </div>
+            <p class="scroll-text">Scroll para explorar</p>
+        </div>
+    </section>
+
+    <!-- SEÇÃO SOBRE MIM -->
+    <section id="about" class="about">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <h2 class="section-title">Sobre <span class="highlight">Mim</span></h2>
+                <p class="section-subtitle">Conheça um pouco sobre minha jornada</p>
+            </div>
+            
+            <div class="about-content">
+                <div class="about-image" data-aos="fade-right" data-aos-duration="800">
+                    <div class="about-gallery">
+                        <div class="gallery-item">
+                            <img src="assets/alves-photo-1.jpeg" alt="Foto de Alves 1" onerror="this.src='https://via.placeholder.com/400x500/8b5cf6/f1f5f9?text=Foto+1'">
+                        </div>
+                        <div class="gallery-item">
+                            <img src="assets/alves-photo-2.jpeg" alt="Foto de Alves 2" onerror="this.src='https://via.placeholder.com/400x500/8b5cf6/f1f5f9?text=Foto+2'">
+                        </div>
+                        <div class="gallery-item">
+                            <img src="assets/alves-photo-3.jpeg" alt="Foto de Alves 3" onerror="this.src='https://via.placeholder.com/400x500/8b5cf6/f1f5f9?text=Foto+3'">
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="about-text" data-aos="fade-left" data-aos-duration="800">
+                    <h3>Desenvolvedor apaixonado por tecnologia</h3>
+                    
+                    <p class="about-description">
+                        Olá! Sou Alves, um estudante de tecnologia apaixonado por criar soluções digitais. 
+                        Minha jornada no mundo do desenvolvimento começou há alguns anos, quando descobri 
+                        o poder do código em transformar ideias em realidade.
+                    </p>
+                    
+                    <p class="about-description">
+                        Desde então, tenho me dedicado constantemente a aprender novas tecnologias e 
+                        aprimorar minhas habilidades. Acredito que a tecnologia é uma ferramenta 
+                        poderosa para resolver problemas reais e melhorar a vida das pessoas.
+                    </p>
+                    
+                    <p class="about-description">
+                        Atualmente, estou focado em desenvolvimento web e mobile, sempre buscando 
+                        criar interfaces modernas, intuitivas e acessíveis. Meu objetivo é continuar 
+                        crescendo como profissional e contribuir para projetos que façam a diferença.
+                    </p>
+                    
+                    <!-- Cards de Estatísticas -->
+                    <div class="stats-grid">
+                        <div class="stat-card">
+                            <div class="stat-icon">
+                                <i class="fas fa-code"></i>
+                            </div>
+                            <div class="stat-number">10+</div>
+                            <div class="stat-label">Projetos</div>
+                        </div>
+                        
+                        <div class="stat-card">
+                            <div class="stat-icon">
+                                <i class="fas fa-laptop-code"></i>
+                            </div>
+                            <div class="stat-number">5</div>
+                            <div class="stat-label">Linguagens</div>
+                        </div>
+                        
+                        <div class="stat-card">
+                            <div class="stat-icon">
+                                <i class="fas fa-coffee"></i>
+                            </div>
+                            <div class="stat-number">∞</div>
+                            <div class="stat-label">Cafés</div>
+                        </div>
+                    </div>
+                    
+                    <a href="assets/cv-alves.pdf" class="btn btn-primary download-cv" download>
+                        <i class="fas fa-download"></i>
+                        Download CV
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SEÇÃO HABILIDADES -->
+    <section id="skills" class="skills">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <h2 class="section-title">Minhas <span class="highlight">Habilidades</span></h2>
+                <p class="section-subtitle">Tecnologias e ferramentas que domino</p>
+            </div>
+            
+            <div class="skills-grid">
+                <!-- HTML5 -->
+                <div class="skill-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="skill-icon">
+                        <i class="fab fa-html5"></i>
+                    </div>
+                    <h3 class="skill-name">HTML5</h3>
+                    <div class="skill-progress">
+                        <div class="progress-bar">
+                            <div class="progress-fill" data-width="95%"></div>
+                        </div>
+                        <span class="progress-text">95%</span>
+                    </div>
+                </div>
+                
+                <!-- CSS3 -->
+                <div class="skill-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="skill-icon">
+                        <i class="fab fa-css3-alt"></i>
+                    </div>
+                    <h3 class="skill-name">CSS3</h3>
+                    <div class="skill-progress">
+                        <div class="progress-bar">
+                            <div class="progress-fill" data-width="90%"></div>
+                        </div>
+                        <span class="progress-text">90%</span>
+                    </div>
+                </div>
+                
+                <!-- JavaScript -->
+                <div class="skill-card" data-aos="fade-up" data-aos-delay="300">
+                    <div class="skill-icon">
+                        <i class="fab fa-js"></i>
+                    </div>
+                    <h3 class="skill-name">JavaScript</h3>
+                    <div class="skill-progress">
+                        <div class="progress-bar">
+                            <div class="progress-fill" data-width="85%"></div>
+                        </div>
+                        <span class="progress-text">85%</span>
+                    </div>
+                </div>
+                
+                <!-- Python -->
+                <div class="skill-card" data-aos="fade-up" data-aos-delay="400">
+                    <div class="skill-icon">
+                        <i class="fab fa-python"></i>
+                    </div>
+                    <h3 class="skill-name">Python</h3>
+                    <div class="skill-progress">
+                        <div class="progress-bar">
+                            <div class="progress-fill" data-width="80%"></div>
+                        </div>
+                        <span class="progress-text">80%</span>
+                    </div>
+                </div>
+                
+                <!-- Git -->
+                <div class="skill-card" data-aos="fade-up" data-aos-delay="500">
+                    <div class="skill-icon">
+                        <i class="fab fa-git-alt"></i>
+                    </div>
+                    <h3 class="skill-name">Git</h3>
+                    <div class="skill-progress">
+                        <div class="progress-bar">
+                            <div class="progress-fill" data-width="85%"></div>
+                        </div>
+                        <span class="progress-text">85%</span>
+                    </div>
+                </div>
+                
+                <!-- React -->
+                <div class="skill-card" data-aos="fade-up" data-aos-delay="600">
+                    <div class="skill-icon">
+                        <i class="fab fa-react"></i>
+                    </div>
+                    <h3 class="skill-name">React</h3>
+                    <div class="skill-progress">
+                        <div class="progress-bar">
+                            <div class="progress-fill" data-width="75%"></div>
+                        </div>
+                        <span class="progress-text">75%</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SEÇÃO PROJETOS -->
+    <section id="projects" class="projects">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <h2 class="section-title">Meus <span class="highlight">Projetos</span></h2>
+                <p class="section-subtitle">Alguns dos trabalhos que desenvolvi</p>
+            </div>
+            
+            <div class="projects-grid">
+                <!-- Projeto 1 - Finanças Domésticas -->
+                <div class="project-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="project-image">
+                        <img src="assets/financas.png" alt="Finanças Domésticas" onerror="this.src='https://via.placeholder.com/600x400/8b5cf6/f1f5f9?text=Finanças+Domésticas'">
+                        <div class="project-overlay">
+                            <div class="project-actions">
+                                <a href="https://fds-rho-ten.vercel.app" class="project-btn" aria-label="Ver demo" target="_blank">
+                                    <i class="fas fa-external-link-alt"></i>
+                                </a>
+                                <a href="https://github.com/Alvesmld/fds" class="project-btn" aria-label="Ver código" target="_blank">
+                                    <i class="fab fa-github"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">Finanças Domésticas</h3>
+                        <p class="project-description">
+                            Aplicativo completo para gerenciamento de finanças pessoais com 
+                            controle de receitas, despesas, gráficos e relatórios detalhados.
+                        </p>
+                        <div class="project-tags">
+                            <span class="tag">JavaScript</span>
+                            <span class="tag">HTML5</span>
+                            <span class="tag">CSS3</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Projeto 2 - Primecell -->
+                <div class="project-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="project-image">
+                        <img src="assets/primecell.png" alt="Primecell" onerror="this.src='https://via.placeholder.com/600x400/06b6d4/f1f5f9?text=Primecell'">
+                        <div class="project-overlay">
+                            <div class="project-actions">
+                                <a href="https://primecell.onrender.com" class="project-btn" aria-label="Ver demo" target="_blank">
+                                    <i class="fas fa-external-link-alt"></i>
+                                </a>
+                                <a href="https://github.com/Alvesmld/primecell" class="project-btn" aria-label="Ver código" target="_blank">
+                                    <i class="fab fa-github"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">Primecell</h3>
+                        <p class="project-description">
+                            Site corporativo desenvolvido para a empresa Primecell, 
+                            com design moderno, seções interativas e totalmente responsivo.
+                        </p>
+                        <div class="project-tags">
+                            <span class="tag">HTML5</span>
+                            <span class="tag">CSS3</span>
+                            <span class="tag">JavaScript</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SEÇÃO TIMELINE / TRAJETÓRIA -->
+    <section id="timeline" class="timeline">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <h2 class="section-title">Minha <span class="highlight">Trajetória</span></h2>
+                <p class="section-subtitle">Marcos importantes da minha jornada</p>
+            </div>
+            
+            <div class="timeline-container">
+                <!-- Evento 1 -->
+                <div class="timeline-item" data-aos="fade-right" data-aos-delay="100">
+                    <div class="timeline-icon timeline-education">
+                        <i class="fas fa-graduation-cap"></i>
+                    </div>
+                    <div class="timeline-content">
+                        <span class="timeline-date">2026 - Presente</span>
+                        <h3 class="timeline-title">Evolução Constante</h3>
+                        <p class="timeline-description">
+                            Continuando a jornada na programação, 
+                            aprimorando habilidades e desenvolvendo novos projetos.
+                        </p>
+                    </div>
+                </div>
+                
+                <!-- Evento 2 -->
+                <div class="timeline-item" data-aos="fade-left" data-aos-delay="200">
+                    <div class="timeline-icon timeline-course">
+                        <i class="fas fa-certificate"></i>
+                    </div>
+                    <div class="timeline-content">
+                        <span class="timeline-date">2025</span>
+                        <h3 class="timeline-title">Curso de Desenvolvimento Web</h3>
+                        <p class="timeline-description">
+                            Primeiros passos com HTML, CSS e JavaScript, 
+                            construindo projetos práticos e evoluindo constantemente.
+                        </p>
+                    </div>
+                </div>
+                
+                <!-- Evento 3 -->
+                <div class="timeline-item" data-aos="fade-right" data-aos-delay="300">
+                    <div class="timeline-icon timeline-project">
+                        <i class="fas fa-rocket"></i>
+                    </div>
+                    <div class="timeline-content">
+                        <span class="timeline-date">2025</span>
+                        <h3 class="timeline-title">Primeiros Projetos</h3>
+                        <p class="timeline-description">
+                            Desenvolvimento dos primeiros projetos pessoais, 
+                            aplicando conhecimentos e buscando melhorias contínuas.
+                        </p>
+                    </div>
+                </div>
+                
+                <!-- Evento 4 -->
+                <div class="timeline-item" data-aos="fade-left" data-aos-delay="400">
+                    <div class="timeline-icon timeline-achievement">
+                        <i class="fas fa-trophy"></i>
+                    </div>
+                    <div class="timeline-content">
+                        <span class="timeline-date">2025</span>
+                        <h3 class="timeline-title">Portfólio Pessoal</h3>
+                        <p class="timeline-description">
+                            Criação do portfólio pessoal para showcase de projetos 
+                            e evolução como desenvolvedor.
+                        </p>
+                    </div>
+                </div>
+                
+                <!-- Evento 5 -->
+                <div class="timeline-item" data-aos="fade-right" data-aos-delay="500">
+                    <div class="timeline-icon timeline-start">
+                        <i class="fas fa-play"></i>
+                    </div>
+                    <div class="timeline-content">
+                        <span class="timeline-date">2025</span>
+                        <h3 class="timeline-title">Início na Programação</h3>
+                        <p class="timeline-description">
+                            Comecei minha jornada na programação, 
+                            com pouca experiência mas muita vontade de aprender e evoluir.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SEÇÃO CONTATO -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <h2 class="section-title">Entre em <span class="highlight">Contato</span></h2>
+                <p class="section-subtitle">Vamos conversar sobre seu próximo projeto</p>
+            </div>
+            
+            <div class="contact-content">
+                <!-- Informações de Contato -->
+                <div class="contact-info" data-aos="fade-right" data-aos-duration="800">
+                    <h3>Informações de Contato</h3>
+                    <p class="contact-description">
+                        Estou sempre aberto a novas oportunidades e colaborações. 
+                        Sinta-se à vontade para entrar em contato!
+                    </p>
+                    
+                    <div class="contact-cards">
+                        <div class="contact-card">
+                            <div class="contact-card-icon">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                            <div class="contact-card-content">
+                                <h4>Email</h4>
+                                <a href="mailto:alves08911@gmail.com">alves08911@gmail.com</a>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-card">
+                            <div class="contact-card-icon">
+                                <i class="fab fa-instagram"></i>
+                            </div>
+                            <div class="contact-card-content">
+                                <h4>Instagram</h4>
+                                <a href="https://instagram.com/Alvesmld" target="_blank">@Alvesmld</a>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-card">
+                            <div class="contact-card-icon">
+                                <i class="fab fa-github"></i>
+                            </div>
+                            <div class="contact-card-content">
+                                <h4>GitHub</h4>
+                                <a href="https://github.com/Alvesmld" target="_blank">github.com/Alvesmld</a>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-card">
+                            <div class="contact-card-icon">
+                                <i class="fab fa-whatsapp"></i>
+                            </div>
+                            <div class="contact-card-content">
+                                <h4>WhatsApp</h4>
+                                <a href="https://wa.me/5517991656885" target="_blank">+55 (17) 99165-6885</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Formulário de Contato -->
+                <div class="contact-form-container" data-aos="fade-left" data-aos-duration="800">
+                    <form class="contact-form" id="contactForm" action="https://formspree.io/f/xaqkkraw" method="POST">
+                        <div class="form-group">
+                            <label for="name">Nome</label>
+                            <input type="text" id="name" name="name" placeholder="Seu nome" required>
+                            <span class="form-error"></span>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" name="email" placeholder="seu@email.com" required>
+                            <span class="form-error"></span>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="message">Mensagem</label>
+                            <textarea id="message" name="message" rows="5" placeholder="Sua mensagem..." required></textarea>
+                            <span class="form-error"></span>
+                        </div>
+                        
+                        <button type="submit" class="btn btn-primary submit-btn">
+                            <i class="fas fa-paper-plane"></i>
+                            Enviar Mensagem
+                        </button>
+                    </form>
+                    
+                    <!-- Feedback de Envio -->
+                    <div class="form-feedback" id="formFeedback">
+                        <i class="fas fa-check-circle"></i>
+                        <p>Mensagem enviada com sucesso!</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <span class="logo-text">Alves</span>
+                    <span class="logo-dot">.</span>
+                </div>
+                
+                <div class="footer-social">
+                    <a href="https://github.com/Alvesmld" class="footer-social-link" aria-label="GitHub" target="_blank">
+                        <i class="fab fa-github"></i>
+                    </a>
+                    <a href="https://instagram.com/Alvesmld" class="footer-social-link" aria-label="Instagram">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                </div>
+                
+                <p class="footer-text">
+                    Feito com 💜 por Alves - 2026
+                </p>
+            </div>
+        </div>
+        
+        <!-- Botão Voltar ao Topo -->
+        <button class="back-to-top" id="backToTop" aria-label="Voltar ao topo">
+            <i class="fas fa-arrow-up"></i>
+        </button>
+    </footer>
+
+    <!-- AOS Animation Library -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    
+    <!-- JavaScript Personalizado -->
+    <script src="script.js"></script>
+</body>
+</html>
